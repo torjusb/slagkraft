@@ -8,8 +8,8 @@
 		'Program' => array('Torsdag 24.', 'Fredag 25.', 'Lørdag 26.'),
 		'Artister' => $artists,
 		'Urørt' => array('Påmelding', 'Avstemming'),
-		'Om Slagkraft' => array('Historie', 'Tidligere arrangementer', 'Kontakt oss'),
 		'Praktisk informasjon' => array('Spørmål og svar'),
+		'Om Slagkraft' => array('Historie', 'Tidligere arrangementer', 'Kontakt oss'),
 		'English' => 'English'
 	);
 	?>
@@ -22,41 +22,60 @@
 	<div id="wrapper">
 		<?php include 'header.inc'; ?>
 		
-		<div id="mainframe">
-			<section id="featured">
-				<nav>
+		<div id="mainframe" class="clearfix">
+			<div class="box-wrapper">
+				<section id="featured">
+					<nav class="slide-nav">
+						<ul>
+							<li><a href="#slide-1">1</a></li>
+							<li><a href="#slide-2">2</a></li>
+							<li><a href="#slide-3">3</a></li>
+						</ul>
+					</nav>
 					<ul>
-						<li><a href="#slide-1">1</a></li>
-						<li><a href="#slide-2">2</a></li>
-						<li><a href="#slide-3">3</a></li>
+						<li id="slide-1">
+							<img src="#" />
+							<p>Vi lader opp til festivalen</p>
+						</li>
+						<li id="slide-2"><img src="#" /></li>
+						<li id="slide-3"><img src="#" /></li>
 					</ul>
-				</nav>
-				<ul>
-					<li id="slide-1">
-						<img src="#" />
-						<p>Vi lader opp til festivalen</p>
-					</li>
-					<li id="slide-2"><img src="#" /></li>
-					<li id="slide-3"><img src="#" /></li>
-				</ul>
-			</section>
-			<section>
-				<h1>Siste <b>nytt</b></h1>
-				<ul>
-					<li>
-						<time>29 Apr</time>
-						<a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-					</li>
-					<li>
-						<time>20 Apr</time>
-						<a href="#">Mauris ultrices ultricies felis, vitae fermentum dui volutpat sed.</a>
-					</li>
-					<li>
-						<time>20 Feb</time>
-						<a href="#">Pellentesque imperdiet quam nec velit euismod sed.</a>
-					</li>
-				</ul>
-			</section>
+				</section>
+				<div id="news-subs">
+					<section id="latest-news">
+						<h1>Siste <b>nytt</b></h1>
+						<ul>
+							<li>
+								<time>29 Apr</time>
+								<a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
+							</li>
+							<li>
+								<time>20 Apr</time>
+								<a href="#">Mauris ultrices ultricies felis, vitae fermentum dui volutpat sed.</a>
+							</li>
+							<li>
+								<time>20 Feb</time>
+								<a href="#">Pellentesque imperdiet quam nec velit euismod sed.</a>
+							</li>
+						</ul>
+					</section>
+					<aside id="subs-box">
+						<h1>Meld deg på <b>nyhetsbrev</b></h1>
+						<form action="">
+							<p>Meld deg på nyhetsbrev i dag, og få ukentlige oppdateringer på mail.</p>
+							<label>
+								<span>Din e-post adresse</span>
+								<input type="text" />
+							</label>
+						</form>		
+						<ul>
+							<li><a href="#">RSS</a></li>
+							<li><a href="#">Følg oss på Twitter</a></li>
+							<li><a href="#">Bli fan på Facebook</a></li>
+						</ul>
+					</aside>
+				</div>
+			</div>
 			<nav id="artists">
 				<ul>
 					<?php foreach ($artists as $artist) { ?>
@@ -69,25 +88,27 @@
 			<aside id="right-col">
 				<section id="order-tickets">
 					<h1>Bestill biletter <b>i dag!</b></h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in arcu at du.</p>
+					<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in arcu at du.</p>
 					<p class="order-button">
 						<a href="#">Bestll biletter nå »</a>
 					</p>
+					<span class="top-left"></span>
+					<span class="bottom-right"></span>
 				</section>
 				
 				<section id="playlists">
 					<ul>
-						<li class="winp">
-							<a href="#">Wimp playlist</a>
+						<li class="wimp">
+							<a href="#"><span></span>Wimp playlist</a>
 						</li>
 						<li class="spotify">
-							<a href="#">Spotify playlist</a>
+							<a href="#"><span></span>Spotify playlist</a>
 						</li>
 					</ul>
 				</section>
 				
 				<section id="untouched">
-					<h1><a href="#">Urørt</a></h1>
+					<h1><a href="#"><span></span>Urørt</a></h1>
 					<nav>
 						<ul>
 							<li><a href="#">Stem på <b>din favoritt</b></a></li>
@@ -152,22 +173,6 @@
 						- <a href="#">bli fan du også!</a>
 					</p>
 				</section>
-			</aside>
-			<aside id="subs-box">
-				<h1>Meld deg på <b>nyhetsbrev</b></h1>
-				<form action="">
-					<p>Meld deg på nyhetsbrev i dag, og få ukentlige oppdateringer på mail.</p>
-					<label>
-						<span>Din e-post adresse</span>
-						<input type="text" />
-					</label>
-				</form>
-				
-				<ul>
-					<li><a href="#">RSS</a></li>
-					<li><a href="#">Følg oss på Twitter</a></li>
-					<li><a href="#">Bli fan på Facebook</a></li>
-				</ul>
 			</aside>
 			<aside id="random-galleries">
 				<ul>
