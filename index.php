@@ -2,9 +2,9 @@
 <html>
 <head>
 	<?php
-	define('BASEPATH', 'http://localhost:8888/slagkraft/');
+	define('BASEPATH', 'http://' . $_SERVER['HTTP_HOST'] . '/slagkraft/');
 	
-	$artists = array('BigBang', 'DumDum Boys', 'Bertine Zetlitz', 'Tolv Volt', 'Burning Rubber', 'Pain of Salvation', 'Bonk', 'Lukas Krasha');
+	$artists = array('BigBang', 'DumDum Boys', 'Bertine Zetlitz', 'Tolv Volt', 'Burning Rubber', 'Pain of Salvation', 'Bonk', 'Lukas Kasha');
 	$tree = array(
 		'Nyheter' => array('2010', '2009', '2008', '2007', 'Tidligere arkiver'),
 		'Program' => array('Torsdag 24.', 'Fredag 25.', 'Lørdag 26.'),
@@ -48,19 +48,17 @@
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
 				navigationControl: true,
 			};
-			var map = new google.maps.Map(document.getElementById("map"), myOptions);
+			var map = new google.maps.Map(document.getElementById("googlemaps"), myOptions);
 			})();
 		});
 	
 	</script>
-
 	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body class="<?php echo $tname; ?>">
 	<div id="wrapper">
 		<?php include 'inc/header.inc'; ?>
-		<?php include $tpath; ?>
-				
+		<?php include $tpath; ?>		
 		<?php include 'inc/footer.inc'; ?>
 	</div>
 </body>
