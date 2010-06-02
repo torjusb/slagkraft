@@ -96,6 +96,7 @@
 		include 'inc/rightcol/artists.inc';
 		include 'inc/rightcol/playlists.inc';
 		include 'inc/rightcol/untouched.inc';
+		include 'inc/rightcol/twitter.inc';
 		?>
 	</aside>
 </div>
