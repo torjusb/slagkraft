@@ -84,10 +84,14 @@ a {
 	color: #184961;
 	text-decoration: none;
 }
-p {
+p, td {
 	line-height: 1.4;
 	color: #3d3d3d;
 }
+h1, h2, h3, h4, h5, h6 {
+	color: #0a1d26;
+}
+
 
 #wrapper {
 	width: 962px;
@@ -140,16 +144,34 @@ p {
 				#head nav li {
 					float: left;
 					text-transform: uppercase;
-					font-size: 15px;
+					font-size: 14px;
 					line-height: 42px;
 				}
-					#head nav li:first-of-type a { padding-left: 5px; }
-					#head nav li:last-of-type a { padding-right: 5px; }
+					#head nav li:first-of-type a { padding-left: 0; }
+					#head nav li:last-of-type a { padding-right: 0; }
 					#head nav a {
 						padding: 0 20px;
 						color: #fff;
 						text-decoration: none;
-					}
+					}		
+		#head form {
+			margin: 20px;
+		}
+			#head form span {
+				color: #fff;
+				display: block;
+				font-size: 13px;
+				margin-bottom: 5px;
+			}
+			#head form input[type="text"] {
+				border: 1px solid #979797;
+				-moz-border-radius: 5px;
+				background: #414141;
+				padding: 5px;
+				width: 200px;
+				-moz-box-shadow: inset 2px 2px 5px 1px rgba(0, 0, 0, .5);
+			}
+				
 	#metaline {
 		overflow: hidden;
 		padding: 10px 10px;
@@ -271,6 +293,16 @@ p {
 					}
 						#subs-box form span {
 							position: absolute;
+							z-index: 2;
+							color: #626262;
+							font-style: italic;
+							font-size: 14px;
+							left: 7px;
+							top: 3px;
+						}
+						#subs-box input[type="submit"] {
+							z-index: 3;
+							position: relative;
 						}
 				
 			#latest-news, #subs-box {
@@ -288,9 +320,8 @@ p {
 			}
 			#news-subs ul { list-style: none; }
 			
-		#artists {
+		.frontpage #artists {
 			position: absolute;
-			background: url(temp/artists.png) repeat-y;
 			top: 0;
 			left: 599px;
 			height: 100%;
@@ -299,12 +330,20 @@ p {
 			border-right: 1px solid #000;
 			overflow: hidden;
 		}	
-			#artists li {
+			.frontpage #artists li {
 				height: 179px;
 				border-bottom: 1px solid #000;
 				position: relative;
 			}
-				#artists a {
+			#artists li {
+				position: relative;
+				border-bottom: 1px solid #000;
+			}
+				#artists li img {
+					display: block;
+				}
+			
+				#artists .title {
 					position: absolute;
 					bottom: 8px;
 					left: 8px;
@@ -314,6 +353,42 @@ p {
 					font-size: 16px;
 					letter-spacing: .5px;
 				}
+				
+				#artists li:hover .overlay, #artists li.selected .overlay {
+					opacity: 1;
+				}
+				.frontpage .overlay {
+					background: url(gfx/artists-large.png) no-repeat;
+					display: block;
+					width: 179px;
+					height: 179px;
+					position: absolute;
+					opacity: 0;
+				}
+				.frontpage #artists .overlay.bigbang { background-position: 0 0; }
+				.frontpage #artists .overlay.dumdum_boys { background-position: 0 -179px; }
+				.frontpage #artists .overlay.bertine_zetlitz { background-position: 0 -358px; }
+				.frontpage #artists .overlay.tolv_volt { background-position: 0 -537px; }
+				.frontpage #artists .overlay.burning_rubber { background-position: 0 -716px; }
+				.frontpage #artists .overlay.bonk { background-position: 0 -895px; }
+				.frontpage #artists .overlay.lukas_krasha { background-position: 0 -1074px; }
+				
+				.wide #artists .overlay {
+					background: url(gfx/artists-wide.png) no-repeat;
+					display: block;
+					width: 241px;
+					height: 59px;
+					position: absolute;
+					opacity: 0;
+				}
+				.wide #artists .overlay.bigbang { background-position: 0 0; }
+				.wide #artists .overlay.dumdum_boys { background-position: 0 -59px; }
+				.wide #artists .overlay.bertine_zetlitz { background-position: 0 -177px; }
+				.wide #artists .overlay.tolv_volt { background-position: 0 -118px; }
+				.wide #artists .overlay.burning_rubber { background-position: 0 -236px; }
+				.wide #artists .overlay.bonk { background-position: 0 -413px; }
+				.wide #artists .overlay.lukas_krasha { background-position: 0 -295px; }
+				.wide #artists .overlay.pain_of_salvation { background-position: 0 -354px; }
 		
 		#right-col {
 			float: right;
@@ -321,6 +396,10 @@ p {
 			position: relative;
 			top: 0;
 		}
+		#right-col.wide {
+			width: 240px;
+		}
+		
 			#right-col ul { list-style: none; }
 			#right-col h1 {
 				font-size: 17px;
@@ -339,7 +418,13 @@ p {
 				position: relative;
 				left: -3px;
 				margin-top: -6px;
+				-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+				z-index: 3;
 			}
+			.wide #order-tickets {
+				width: 255px
+			}
+			
 				#order-tickets h1 {
 					color: #fff;
 					font-weight: 400;
@@ -419,7 +504,8 @@ p {
 				#right-col .wimp a {
 					display: block;
 					line-height: 60px;
-					padding-left: 10px;
+					padding-right: 80px;
+					text-align: right;
 					color: #4e0837;
 					text-shadow: 1px 1px #fff;
 				}
@@ -463,7 +549,7 @@ p {
 			
 			
 			#twitter-updates, #facebook-fans {
-				padding: 10px;
+				padding: 15px 10px;
 				border-top: 1px solid #aeaeae;
 			}
 				#twitter-updates li {
@@ -497,12 +583,367 @@ p {
 			width: 600px;
 			min-height: 300px;
 		}
+		
+		
+		#content {
+			float: left;
+			width: 720px;
+			background: url(gfx/black-dot.png) repeat-y right;
+		}
+			#subnav {
+				background: #262629;
+				border-top: 1px solid #313131;
+				height: 28px;
+				padding: 0 10px;
+				width: 700px;
+			}
+				#subnav p {
+					color: #fff;
+					font-size: 12px;
+					float: left;
+					line-height: 28px;
+				}
+					#subnav p a {
+						color: #56aad4;
+					}
+					
+				#subnav ul {
+					float: right;
+				}
+					#subnav li {
+						display: inline-block;
+					}
+						#subnav ul li.selected {
+							background: #000;
+							position: relative;
+							top: -1px;
+						}
+						#subnav li a {
+							padding: 0 10px;
+							display: block;
+							color: #fff;
+							font-size: 12px;
+							line-height: 28px;
+						}
+			
+			#content .heading {
+				font-size: 34px;
+			}
+			
+			#article {
+				padding: 10px;
+			}
+			#article .images {
+				float: right;
+				margin: 10px;
+				margin-right: 0;
+				padding: 1px;
+				border: 1px solid #eaeaea;
+			}
+				#article .images .main {
+					display: block;
+					margin-bottom: 1px;
+				}
+				#article .images .thumbs img {
+					float: left;
+					display: block;
+					margin-left: 1px;
+					width: 99px;
+				}
+				#article .images .thumbs img:first-of-type {
+					margin-left: 0;
+					width: 100px;
+					height: 99px;
+				}
+				
+				#article-meta {
+					float: left;
+					width: 150px;
+					margin-top: 13px;
+					padding-top: 10px;
+					border-top: 2px solid #adadad;
+					position: relative;
+				}
+					#article-meta .byline {
+					}
+						#article-meta .byline h2 {
+							margin-left: 50px;
+							font-size: 14px;
+							width: 100px;
+							line-height: 1.4;
+						}
+						#article-meta .byline img {
+							padding: 3px;
+							border: 1px solid #eaeaea;
+							float: left;
+							position: absolute;
+							top: 7px;
+							width: 35px;
+						}
+						#article-meta time {
+							font-size: 12px;
+							margin-left: 50px;
+							line-height: 1.4;
+							color: #3D3D3D;
+							width: 100px;
+							display: block;
+						}
+						
+					#article-meta .share {
+						padding-top: 20px;
+						margin-top: 15px;
+						border-top: 1px solid #adadad;
+					}
+						#article-meta .share h2 {
+							font-size: 14px;
+						}
+						#article-meta .share li {
+							text-indent: -9999px;
+							height: 16px;
+							width: 16px;
+							background: #eee;
+							margin-right: 5px;
+							float: left;
+							list-style: none;
+						}
+						
+				#article-meta + .entry {
+					margin-left: 160px;
+				}
+				
+				.entry {
+					margin-top: 10px;
+				}
+					.entry p {
+						font-size: 14px;
+						margin-bottom: 15px;
+					}
+					
+					.entry .program {
+						width: 100%;
+						margin-top: 20px;
+					}
+					.entry .program + .program { margin-top: 40px; }
+						.entry .program .time { text-align: right; }
+						.entry .program .artist-name { width: 300px; }
+						.entry .program caption {
+							text-align: left;
+							font-size: 18px;
+							color: #3a3a3a;
+							font-weight: 700;
+							margin-bottom: 7px;
+						}
+						.entry .program thead {
+							background: #0a1d26;
+						}
+							.entry .program th {
+								color: #fff;
+								text-transform: uppercase;
+								text-align: left;
+								font-weight: 400;
+								font-size: 14px;
+							}
+						.entry .program tbody tr {
+							border-bottom: 1px solid #ababab;
+						}						
+							.entry .program th, .entry .program td {
+								padding: 7px 10px 5px;
+							}
+							.entry .program td {
+								font-size: 13px;
+							}
+						
+				#printer {
+					position: relative;
+					float: right;
+				}
+					#printer a {
+						display: block;
+						width: 176px;
+						height: 29px;
+						background: url(gfx/printer.png) no-repeat 0 -1px;
+						color: #000;
+						text-shadow: 1px 1px #4a88a6;
+						font-weight: 700;
+						line-height: 31px;
+						padding-left: 10px;
+						margin-top: 10px;
+					}
+					#printer a:hover {
+						background-position: 0 -32px!important;
+						text-shadow: 1px 1px #67BFE9!important;
+					}
+					#printer a:focus {
+						background-position: 0 -63px;
+						outline: none;
+					}
+					
+				.popdown {
+					background: #e7e7e7;
+					border: 1px solid #000;
+					width: 215px;
+					-moz-border-radius: 3px;
+					-moz-border-radius-topright: 0;
+					position: absolute;
+					right: 0;
+					top: 36px;
+					-moz-box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, .5);
+				}
+					.popdown h2 {
+						font-size: 14px;
+						margin-bottom: 5px;
+					}
+					.popdown form {
+						border-top: 1px solid #fff;
+						padding: 10px;
+						overflow: hidden;
+					}
+						.popdown ul { list-style: none; }
+							.popdown li {
+								margin-bottom: 5px;
+							}
+								.popdown form span {
+									display: inline!important;
+									font-size: 12px;
+									padding-left: 5px;
+								}
+								.popdown form label input {
+									display: inline;
+									margin: 0;
+								}
+								
+						.popdown input[type="submit"] {
+							text-transform: none;
+							padding: 0 3px 2px;
+							font-size: 13px;
+							float: right;
+						} 
+				
+				#comments {
+					border-top: 1px solid #eaeaea;
+					padding-top: 20px;
+				}
+					#comments h2 {
+						font-weight: 400;
+						font-size: 21px;
+						margin-bottom: 20px;
+					}
+					
+					#comments nav {
+						padding: 10px;
+						overflow: hidden;
+						border-top: 1px solid #eaeaea;
+					}					
+						#comments nav ul {
+							float: right;
+							margin-top: 2px;
+						}
+							#comments nav ul li {
+								float: left;
+								margin-left: 5px;
+								font-size: 13px;
+							}
+								#comments nav li a {
+									padding: 5px;
+								}
+								#comments nav li.current a {
+									color: #3D3D3D;
+									font-weight: 700;
+								}
+								
+						#comments nav p {
+							float: left;
+							color: #8a8a8a;
+							font-size: 13px;
+						}
+					
+					#comments article {
+						margin-bottom: 20px;
+					}
+						#comments article h3, #comments article time {
+							display: inline;
+							font-size: 14px;
+						}
+						#comments article h3:after {
+							content: ',';
+							font-weight: 400;
+						}
+						#comments article time {
+							text-transform: lowercase;
+							color: #5e5e5e;
+						}
+						#comments article p {
+							margin-top: 5px;
+							font-size: 14px;
+						}
+						
+					#respond {
+						border-top: 1px solid #eaeaea;
+						padding-top: 20px;
+						clear: both;
+					}						
+						#respond h3 {
+							font-weight: 400;
+							font-size: 21px;
+						}
+						#respond .rules {
+							float: right;
+							width: 215px;
+							margin-bottom: 15px;
+							margin-top: -20px;
+							border-left: 1px solid #eaeaea;
+							padding: 20px 0 15px 10px;
+						}
+							#respond .rules p {
+								font-size: 14px;
+							}
+							#respond .rules fieldset {
+								height: 100px;
+							}
+						#respond .form {
+							width: 470px;
+							float: left;						
+						}
+							#respond ul {
+								list-style: none;
+								margin-top: 20px;
+							}
+								#respond label span {
+									color: #0a1d26;
+									font-size: 16px;
+									margin-bottom: 5px;
+								}
+									#respond label span small { font-size: 12px; }
+									
+								#respond .name, #respond .email {
+									float: left;
+								}
+								#respond .email {
+									margin-left: 20px;
+								}
+									#respond label input {
+										width: 206px;
+									}
+								#respond .message {
+									clear: both;
+									padding-top: 20px;
+								}
+									#respond textarea {
+										width: 445px!important;
+										height: 75px;
+									}
+								
+							#respond input[type="submit"] {
+								float: right;
+								margin: 10px;
+							}
 	
 	#foot-nav {
 		overflow: hidden;
 		margin-top: 20px;
 		background: url(gfx/shadow.png) repeat-x bottom left;
 		padding-bottom: 5px;
+		clear: both;
 	}
 		#foot-nav nav {
 			border: 1px solid #000;
@@ -543,6 +984,37 @@ p {
 							color: #7d7d7d;
 							font-size: 13px;
 						}
+						
+						
+input[type="submit"] {
+	-moz-border-radius: 5px;
+	padding: 3px;
+	border: 1px solid #508eac;
+	border-left-color: -moz-linear-gradient(-90deg, #508eac, #v1b4256);
+	border-right-color: -moz-linear-gradient(-90deg, #508eac, #v1b4256);
+	border-bottom: 0;
+	background: -moz-linear-gradient(-90deg, #2a7296, #1c4d66);
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #000;
+	text-shadow: 1px 1px #4a88a6;
+	font-size: 14px;
+	margin-left: -10px;
+	-moz-box-shadow: 0 0 0 1px #000000;
+}
+
+#content label span {
+	display: block;
+}
+#mainframe label input[type="text"], #mainframe label input[type="email"], #mainframe label textarea {
+	background: #fff;
+	-moz-border-radius: 5px;
+	border: 1px solid #979797;
+	padding: 6px;
+	z-index: 0;
+	position: relative;
+	-moz-box-shadow: inset 2px 2px 3px 0px rgba(0, 0, 0, .2);
+}
 				
 
 
