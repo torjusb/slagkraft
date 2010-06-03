@@ -31,29 +31,69 @@
 		$tpath = 'tpl/frontpage.php';
 		$tname = 'frontpage';
 	}
+	
+	$suffix = 'Slagkraft';
+	switch ($tname) {
+		case 'frontpage':
+			$suffix = false;
+			$ptitle = 'Velkommen til Slagkraft';
+			break;
+		case 'article':
+			$ptitle = 'Lorem ipsum dolor sit amet';
+			break;
+		case 'artist':
+			$ptitle = 'Tolv Volt';
+			break;
+		case 'contact':
+			$ptitle = 'Kontakt oss';
+			break;
+		case 'program':
+			$ptitle = 'Program';
+			break;
+	}
 	?>
 	<meta charset="utf-8" />
-	<title></title>
+	<title><?php echo $ptitle; ?><?php if ($suffix) echo ' » ' . $suffix; ?></title>
 	<base href="<?php echo BASEPATH; ?>" />
 	<link href="style.css" rel="stylesheet" media="screen" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="js/modernizr-1.1.min.js"></script>
+	<script src="js/js.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript">
 		$(function () {
 			(function () {
 			var latlng = new google.maps.LatLng(61.143235,9.0966);
+			var mapTypes = [];
+			mapTypes["TERRAIN"] = false;
 			var myOptions = {
 				zoom: 16,
 				center: latlng,
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
 				navigationControl: true,
+				navigationControlOptions: {
+					position: google.maps.ControlPosition.BOTTOM_LEFT,
+				},
+				mapTypeControlOptions: {
+					style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+					position: google.maps.ControlPosition.BOTTOM,
+			    },
 			};
+			console.log(google.maps);
+			google.maps.ControlPosition.BOTTOM = 15;
+			google.maps.MapTypeId.HYBRID = '';
+			google.maps.MapTypeId.TERRAIN = '';
+
+			console.log(google.maps.MapTypeId);
 			var map = new google.maps.Map(document.getElementById("googlemaps"), myOptions);
 			})();
 		});
 	
 	</script>
 	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<!--[if IE 7]>
+		<link href="ie7hacks.css" rel="stylesheet" media="screen" />
+	<![endif]-->
 </head>
 <body class="<?php echo $tname; ?>">
 	<div id="wrapper">

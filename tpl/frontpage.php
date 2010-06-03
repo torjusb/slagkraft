@@ -9,14 +9,24 @@
 				</ul>
 			</nav>
 			<ul class="slides">
-				<li id="slide-1">
+				<li id="slide-1" class="current">
 					<a href="?page=article">
-						<img src="#" />
+						<img src="img/slide-1.png" />
 						<p>Vi lader opp til festivalen</p>
 					</a>
 				</li>
-				<li id="slide-2"><img src="#" /></li>
-				<li id="slide-3"><img src="#" /></li>
+				<li id="slide-2">	
+					<a href="#">
+						<img src="img/slide-2.png" />
+						<p>asdf</p>
+					</a>
+				</li>
+				<li id="slide-3">
+					<a href="#">
+						<img src="img/slide-3.png" />
+						<p>Jobb som frivillig yo!</p>
+					</a>
+				</li>
 			</ul>
 		</section>
 		<div id="news-subs">
@@ -64,8 +74,9 @@
 				<?php $imgSrc = str_replace(' ', '_', strtolower($artist)); ?>
 				<li>
 					<a href="?page=artist">
-						<span class="overlay <?php echo $imgSrc; ?>"></span>
-						<img src="img/artists/large/<?php echo $imgSrc; ?>.png" alt="bilde" />
+						<div class="overlay <?php echo $imgSrc; ?>">
+							<img src="img/artists/large/<?php echo $imgSrc; ?>.png" alt="bilde" />
+						</div>
 						<span class="title"><?php echo $artist; ?></span>
 					</a>
 				</li>
@@ -83,9 +94,24 @@
 	</aside>
 	<aside id="random-galleries">
 		<ul>
-			<li><a href="#"><img src="" alt="" /></a></li>
-			<li><a href="#"><img src="" alt="" /></a></li>
-			<li><a href="#"><img src="" alt="" /></a></li>
+			<li class="img-1">
+				<a href="#">
+					<span class="overlay"></span>
+					<img src="img/gallery_1.png" alt="galleri bilde" />
+				</a>
+			</li>
+			<li class="img-2">
+				<a href="#">
+					<span class="overlay"></span>
+					<img src="img/gallery_2.png" alt="galleri bilde" />
+				</a>
+			</li>
+			<li class="img-3">
+				<a href="#">
+					<span class="overlay"></span>
+					<img src="img/gallery_3.png" alt="galleri bilde" />
+				</a>
+			</li>
 		</ul>
 	</aside>
 	<aside id="map">

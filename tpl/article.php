@@ -1,5 +1,5 @@
 <div id="mainframe" class="clearfix">
-	<div id="content">
+	<div id="content" class="news-entry">
 		<nav id="subnav" class="clearfix">
 			<p>
 				<a href="#">Hjem</a> / <span>Program</span>

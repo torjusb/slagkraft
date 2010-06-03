@@ -3,8 +3,9 @@
 	<form action="">
 		<div class="rules">
 			<p>Fyll inn din personlige info til venstre eller identifiser deg med Twitter eller Facebook.</p>
-			<fieldset class="connect">
-			
+			<fieldset class="connectframe">
+				<button class="connect facebook">Koble til med Facebook</button><br />
+				<button class="connect twitter">Koble til med Twitter</button>
 			</fieldset>
 			<p>Gravatar er støttet, om e-post er utfylt.</p>
 		</div>

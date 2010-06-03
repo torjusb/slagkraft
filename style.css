@@ -135,12 +135,12 @@ h1, h2, h3, h4, h5, h6 {
 		}
 		
 		#head nav {
-			overflow: hidden;
 			background: #184961;
 			border-top: 1px solid #3e7a98;
 			border-bottom: 1px solid #3e7a98;
 			height: 40px;
 			clear: both;
+			position: relative;
 		}
 			#head nav ul {
 				display: table;
@@ -158,10 +158,29 @@ h1, h2, h3, h4, h5, h6 {
 						color: #fff;
 						display: block;
 						text-decoration: none;
+						height: 39px;
 					}
 					#head nav a:hover {
 						background: #123d52;
 					}
+			#head nav .english {
+				width: 21px;
+				height: 21px;
+				position: absolute;
+				right: 5px;
+				top: 9px;
+				text-indent: -9999px;
+				background: url(gfx/graphics.png) no-repeat -309px -1px;
+				z-index: 5;
+				cursor: pointer;
+			}
+			#head nav .english:hover {
+				background: url(gfx/graphics.png) no-repeat -333px -1px;
+			}
+				#head nav .english:hover a {
+					background: transparent;
+				}
+			
 		#head form {
 			margin: 20px;
 		}
@@ -177,7 +196,13 @@ h1, h2, h3, h4, h5, h6 {
 				background: #414141;
 				padding: 5px;
 				width: 200px;
+				color: #ddd;
+				font-style: italic;
 				-moz-box-shadow: inset 2px 2px 5px 1px rgba(0, 0, 0, .5);
+			}
+			#head form input[type="text"]:focus {
+				background: #707070;
+				font-style: normal;
 			}
 				
 	#metaline {
@@ -213,7 +238,6 @@ h1, h2, h3, h4, h5, h6 {
 			overflow: hidden;
 			width: 599px;
 			position: relative;
-			background: url(temp/slider.png) no-repeat;
 		}
 
 			#featured p {
@@ -224,13 +248,21 @@ h1, h2, h3, h4, h5, h6 {
 				text-transform: uppercase;
 				font-size: 15px;
 				letter-spacing: .5px;
+				z-index: 5;
 			}
 			#featured .slides {
 				list-style: none;
 				width: 9999px;
+				position: relative;
 			}
+				#featured .slides #slide-1 {
+					display: block;
+				}
 				#featured .slides li {
-					float: left;
+					position: absolute;	
+					left: 0;
+					top: 0;			
+					display: none;
 				}
 					#featured .slides a { display: block; }
 					#featured .slides img {
@@ -244,6 +276,7 @@ h1, h2, h3, h4, h5, h6 {
 				position: absolute;
 				bottom: 0;
 				width: 100%;
+				z-index: 4;
 			}
 				#featured .slide-nav ul {
 					float: right;
@@ -336,6 +369,9 @@ h1, h2, h3, h4, h5, h6 {
 							z-index: 3;
 							position: relative;
 						}
+						 #subs-box .cool-sub {
+						 	margin-left: -10px;
+						 }
 				
 			#latest-news, #subs-box {
 				width: 278px;
@@ -407,16 +443,22 @@ h1, h2, h3, h4, h5, h6 {
 					letter-spacing: .5px;
 				}
 				
-				#artists li:hover .overlay, #artists li.selected .overlay {
-					opacity: 1;
+				.wide #artists li:hover .overlay, .wide #artists li.selected .overlay {
+					visibility: visible;
 				}
-				.frontpage .overlay {
+				
+				.frontpage #artists li:hover .overlay, .frontpage #artists li.selected .overlay {
+					visibility: visible;
+				}
+					#artists li:hover .overlay img, #artists li.selected .overlay img {
+						display: none;
+					}
+				.frontpage #artists .overlay {
 					background: url(gfx/artists-large.png) no-repeat;
 					display: block;
 					width: 179px;
 					height: 179px;
 					position: absolute;
-					opacity: 0;
 				}
 				.frontpage #artists .overlay.bigbang { background-position: 0 0; }
 				.frontpage #artists .overlay.dumdum_boys { background-position: 0 -179px; }
@@ -432,8 +474,6 @@ h1, h2, h3, h4, h5, h6 {
 					display: block;
 					width: 241px;
 					height: 59px;
-					position: absolute;
-					opacity: 0;
 				}
 				.wide #artists .overlay.bigbang { background-position: 0 0; }
 				.wide #artists .overlay.dumdum_boys { background-position: 0 -59px; }
@@ -652,11 +692,47 @@ h1, h2, h3, h4, h5, h6 {
 			border-bottom: 1px solid #000;
 			height: 157px;
 			width: 599px;
-			background: url(temp/gallery.png) no-repeat;
+			overflow: hidden;
 		}
 			#random-galleries ul {
 				list-style: none;
 			}
+				#random-galleries li.img-3 {
+				 	float: right;
+				 	width: 200px;
+				}
+				#random-galleries li {
+					float: left;
+					width: 199px;
+					position: relative;
+				}
+					#random-galleries li:hover .overlay {
+						display: none;					
+					}
+					#random-galleries img {
+						display: block;
+					}
+					
+					#random-galleries .overlay {
+						width: 199px;
+						height: 200px;
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 2;
+						background: url(gfx/galleries.png) no-repeat;
+					}
+					#random-galleries .img-1 .overlay {
+						background-position: 0 0;
+					}
+					#random-galleries .img-2 .overlay {
+						background-position: -199px 0;
+					}
+					#random-galleries .img-3 .overlay {
+						background-position: -398px 0;
+						width: 200px;
+						left: -1px;
+					}
 			
 		#map {
 			width: 599px;
@@ -990,7 +1066,7 @@ h1, h2, h3, h4, h5, h6 {
 							.popdown li {
 								margin-bottom: 5px;
 							}
-								.popdown form span {
+								#mainframe .popdown form span {
 									display: inline!important;
 									font-size: 12px;
 									padding-left: 5px;
@@ -1047,6 +1123,8 @@ h1, h2, h3, h4, h5, h6 {
 					
 					#comments article {
 						margin-bottom: 20px;
+						clear: left;
+						overflow: hidden;
 					}
 						#comments article h3, #comments article time {
 							display: inline;
@@ -1059,6 +1137,12 @@ h1, h2, h3, h4, h5, h6 {
 						#comments article time {
 							text-transform: lowercase;
 							color: #5e5e5e;
+						}
+						#comments article img {
+							float: left;
+							padding: 2px;
+							border: 1px solid #adadad;
+							margin: 5px 10px 5px 0;
 						}
 						#comments article p {
 							margin-top: 5px;
@@ -1087,6 +1171,7 @@ h1, h2, h3, h4, h5, h6 {
 							}
 							#respond .rules fieldset {
 								height: 100px;
+								margin-top: 15px;
 							}
 						#respond .form {
 							width: 470px;
@@ -1127,15 +1212,18 @@ h1, h2, h3, h4, h5, h6 {
 		padding-bottom: 5px;
 		clear: both;
 	}
-		#foot-nav nav {
+		#foot-nav div {
 			border: 1px solid #000;
 			background: #161617;
 			overflow: hidden;
-			padding-bottom: 15px;
+		}
+		#foot-nav nav {
+			overflow: hidden;
+			margin: 10px 0;
+			float: left;
+			border-right: 1px solid #333;
 		}
 			#foot-nav ul {
-				border-top: 1px solid #444;
-				padding-top: 15px;
 			}
 			#foot-nav ul:first-of-type {
 				padding-left: 15px;
@@ -1166,14 +1254,29 @@ h1, h2, h3, h4, h5, h6 {
 							color: #7d7d7d;
 							font-size: 13px;
 						}
-						
+		#foot-nav section {
+			float: right;
+			padding: 10px;
+		}
+			#foot-nav section address {
+				width: 225px;
+				float: left;
+			}
+			#foot-nav section p strong {
+				color: #fff;
+			}
+			#foot-nav section p {
+				color: #7D7D7D;
+				font-size: 12px;
+				font-style: normal;
+			}
 						
 input[type="submit"] {
 	-moz-border-radius: 5px;
 	padding: 3px;
-	border: 1px solid #508eac;
-	border-left-color: -moz-linear-gradient(-90deg, #508eac, #v1b4256);
-	border-right-color: -moz-linear-gradient(-90deg, #508eac, #v1b4256);
+	border: 1px solid #80bfde;
+	border-left: 0;
+	border-right: 0;
 	border-bottom: 0;
 	background: -moz-linear-gradient(-90deg, #2a7296, #1c4d66);
 	text-transform: uppercase;
@@ -1185,6 +1288,25 @@ input[type="submit"] {
 	cursor: pointer;
 	-moz-box-shadow: 0 0 0 1px #000000;
 }
+input[type="submit"]:hover {
+	background: -moz-linear-gradient(-90deg, #3e8cb2, #266180);
+}
+
+.cool-sub {
+	display: inline-block;
+	padding-right: 8px;
+	height: 28px;
+	background: transparent url(gfx/button-right.png) right no-repeat;
+}
+	.cool-sub input {
+		padding-left: 8px;
+		height: 28px;
+		margin-right: 8px;
+		background: url(gfx/button-left.png) left no-repeat;	
+		border: 0;
+	}
+
+
 
 #content label span {
 	display: block;
@@ -1206,6 +1328,7 @@ input[type="submit"] {
 	color: #0a1d26;
 	font-size: 16px;
 	margin-bottom: 5px;
+	cursor: pointer;
 }
 	#mainframe label span small { font-size: 12px; }
 	
@@ -1233,6 +1356,18 @@ input[type="submit"] {
 	background-position: -47px -47px;
 	margin-left: 5px;
 }
+
+button.connect {
+	background: transparent url(gfx/graphics.png) no-repeat;
+	width: 121px;
+	height: 33px;
+	display: block;
+	text-indent: -9999px;
+	border: 0;
+	cursor: pointer;
+}
+button.connect.facebook { background-position: -174px -1px; }
+button.connect.twitter { background-position: -174px -39px; }
 
 
 .clearfix:after {

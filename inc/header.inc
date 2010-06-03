@@ -22,6 +22,9 @@
 				</li>
 			<?php } ?>
 		</ul>
+		<p class="english">
+			<a href="#">English</a>
+		</p>
 	</nav>
 </header>
 

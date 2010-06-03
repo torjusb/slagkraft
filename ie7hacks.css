@@ -1,0 +1,160 @@
+#foot-nav div {
+	padding-left: 10px;
+}
+
+#subnav li {
+	position: relative;
+}
+	#subnav li .arrow {
+		left: 50%;
+		position: absolute;
+		margin-left: -4.5px;
+		width: 9px;
+	}
+
+#comments article h3 {
+	padding-right: 5px;
+}
+
+
+#news-subs {
+	padding-bottom: 15px;
+}
+
+#head nav {
+	padding-left: 35px;
+}
+
+#head form {
+	width: 275px;
+}
+	#head form label input {
+		padding: 4px 5px 5px!important;
+	}
+	#head form .cool-sub {
+		float: right;
+		margin-top: -28px;
+		margin-left: -32px;
+	}
+		#head form .cool-sub input {
+			margin-right: 0!important;
+		}
+
+#subs-box form label input {
+	width: 182px;
+	margin-left: 5px;
+	padding: 5px!important;
+}
+
+#respond .cool-sub {
+	margin: 10px;
+}
+	#respond .cool-sub input {
+		margin: 0;
+	}
+	
+#respond .message {
+	padding-top: 0;
+}
+
+
+.frontpage #artists {
+	zoom: 1;
+}
+
+.frontpage #artists ul, .frontpage #artists ul * {
+	position: relative;
+}
+
+.frontpage #artists ul, .frontpage #artists {
+	zoom: 1;
+	height: 100%;
+}
+	.frontpage #artists li {
+		z-index: 3;
+		zoom: 1;
+		margin-top: -3px;
+	}
+	.frontpage #artists li:hover img {
+		display: none;
+	}
+		.frontpage #artists li a {
+			position: relative;
+			z-index: 1;
+			cursor: pointer;
+		}
+		.frontpage #artists .title {
+			bottom: 30px;
+		}
+		
+#subs-box ul .twitter {
+	margin: 0;
+}
+#subs-box ul li .rss {
+	vertical-align: -3px;
+}	
+
+#right-col #artists li {
+	zoom: 1;
+	margin-top: -3px;
+	z-index: 1;
+	cursor: pointer;
+}	
+	#right-col #artists li div {
+		height: 59px;
+		width: 241px;
+	}
+	#right-col #artists li.selected img {
+		display: none;
+	}
+	#right-col #artists li a {
+		position: relative;
+		z-index: 2;
+		cursor: pointer;
+	}
+	#right-col #artists li:hover .overlay {
+		z-index: 999;
+	}
+	#right-col #artists li img {
+		position: relative;
+		z-index: 3;
+	}
+	#artists .title {
+		z-index: 69999;
+	}
+	
+#playlists {
+	margin-top: -3px;
+}
+#playlists a {
+	zoom: 1;
+}
+
+#right-col #untouched h1 {
+	margin-left: 9999px;
+}
+
+#featured .slide-nav {
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#7F000000',EndColorStr='#7F000000');
+}
+
+
+.program caption {
+	padding-bottom: 7px;
+}
+.program thead th {
+	background: #0A1D26;
+}
+.program tbody td {
+	border-bottom: 1px solid #ABABAB;
+}
+
+#printer {
+	position: relative;
+	top: 38px;
+}
+
+.news-entry .entry {
+	margin-left: 160px;
+}
+
