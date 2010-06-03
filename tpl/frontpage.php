@@ -34,15 +34,15 @@
 				<h1>Siste <b>nytt</b></h1>
 				<ul>
 					<li>
-						<time>29 Apr</time>
+						<time datetime="2010-04-29">29 Apr</time>
 						<a href="?page=article">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
 					</li>
 					<li>
-						<time>20 Apr</time>
+						<time datetime="2010-04-20">20 Apr</time>
 						<a href="?page=article">Mauris ultrices ultricies felis, vitae fermentum dui volutpat sed.</a>
 					</li>
 					<li class="last">
-						<time>20 Feb</time>
+						<time datetime="2010-02-20">20 Feb</time>
 						<a href="?page=article">Pellentesque imperdiet quam nec velit euismod sed.</a>
 					</li>
 				</ul>
