@@ -2,7 +2,7 @@
 	<div id="content">
 		<nav id="subnav" class="clearfix">
 			<p>
-				<a href="#">Hjem</a> / <a href="#">Artister</a> / <span>Tolv Volt</span>
+				<a href="#">Hjem</a> / <a href="#">Om Slagkraft</a> / <span>Kontakt oss</span>
 			</p>
 			<ul>
 				<li><a href="#">Historie</a></li>
@@ -12,7 +12,7 @@
 		</nav>
 		<article id="article">
 			<h1 class="heading">Kontakt oss</h1>
-			<div id="map"></div>
+			<div class="map-cont"><div id="googlemaps"></div></div>
 			<div class="entry">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis egestas adipiscing urna, vitae commodo risus laoreet id. Donec vitae lacinia sapien. Curabitur libero sapien, convallis non hendrerit vel, venenatis elementum mauris.</p>
@@ -40,19 +40,19 @@
 				<form action="">
 					<ul>
 						<li class="name">
-							<label for="">
+							<label>
 								<span>Ditt navn <small>(påkrevd)</small></span>
 								<input type="text" />
 							</label>
 						</li>
 						<li class="email">
-							<label for="">
+							<label>
 								<span>Din e-post <small>(påkrevd)</small></span>
 								<input type="email" />
 							</label>
 						</li>
 						<li class="who">
-							<label for="">
+							<label>
 								<span>Hvem ønsker du å komme i kontakt med?</span>
 								<select>
 									<option>Styret</option>
@@ -61,7 +61,7 @@
 							</label>
 						</li>
 						<li class="message">
-							<label for="">
+							<label>
 								<span>Din melding</span>
 								<textarea></textarea>
 							</label>

@@ -60,37 +60,35 @@
 	<script src="js/modernizr-1.1.min.js"></script>
 	<script src="js/js.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script src="js/tablesorter.js"></script>
 	<script type="text/javascript">
 		$(function () {
+			var mapelem = $("#googlemaps");
 			(function () {
-			var latlng = new google.maps.LatLng(61.143235,9.0966);
-			var mapTypes = [];
-			mapTypes["TERRAIN"] = false;
-			var myOptions = {
-				zoom: 16,
-				center: latlng,
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				navigationControl: true,
-				navigationControlOptions: {
-					position: google.maps.ControlPosition.BOTTOM_LEFT,
-				},
-				mapTypeControlOptions: {
-					style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-					position: google.maps.ControlPosition.BOTTOM,
-			    },
-			};
-			console.log(google.maps);
-			google.maps.ControlPosition.BOTTOM = 15;
-			google.maps.MapTypeId.HYBRID = '';
-			google.maps.MapTypeId.TERRAIN = '';
-
-			console.log(google.maps.MapTypeId);
-			var map = new google.maps.Map(document.getElementById("googlemaps"), myOptions);
+				if (mapelem.length === 0) {
+					return false;
+				}
+				var latlng = new google.maps.LatLng(61.143235,9.0966);
+				var mapTypes = [];
+				mapTypes["TERRAIN"] = false;
+				var myOptions = {
+					zoom: 16,
+					center: latlng,
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					navigationControl: true
+				};
+				google.maps.MapTypeId.HYBRID = '';
+				google.maps.MapTypeId.TERRAIN = '';
+	
+				var map = new google.maps.Map(mapelem[0], myOptions);
 			})();
 		});
 	
 	</script>
 	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<!--[if IE 8]>
+		<link href="ie8hacks.css" rel="stylesheet" media="screen" />
+	<![endif]-->
 	<!--[if IE 7]>
 		<link href="ie7hacks.css" rel="stylesheet" media="screen" />
 	<![endif]-->

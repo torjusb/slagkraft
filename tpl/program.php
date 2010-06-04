@@ -43,7 +43,7 @@
 					<?php for ($i = 0; $i < 3; $i++) { ?>
 						<table class="program">
 							<caption>Torsdag 24. Juni</caption>
-							<col span="1" class="artist-name" />
+							<col colspan="1" class="artist-name" />
 							<thead>
 								<tr>
 									<th>Artist<span class="arrow"></span></th>

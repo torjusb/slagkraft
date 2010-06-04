@@ -1,4 +1,9 @@
 jQuery( function ($) {
+	
+	if ($.browser.opera) {		
+		$('body').addClass('opera');
+	}
+	
 	/*
 	 * Add Placeholder support 	*/
 	if (!Modernizr.input.placeholder) {
@@ -38,7 +43,7 @@ jQuery( function ($) {
 		}
 		
 		var sliderWrap = $('#artists ul');
-		var interval, timeout;
+		var interval;
 		
 		var slideInterval =  7000;
 		
@@ -56,11 +61,8 @@ jQuery( function ($) {
 		
 		sliderWrap.hover( function (e) {
 			clearInterval(interval);
-			clearTimeout(timeout);
 		}, function () {
-			timeout = setTimeout( function () {
-				interval = setInterval(slider);
-			}, 5000)
+			interval = setInterval(slider, slideInterval);
 		});
 	})();
 	
@@ -76,12 +78,18 @@ jQuery( function ($) {
 		var slideTime = 6000,
 			fadeTime = 800;
 		
-		
 		var interval, next;
 		var currentI = 1;
 		
-		// Hide every slide but the first
-		slides.hide().filter('.current').show();
+		var titleTag = $('p.title', newsWrap[0]);
+		var updateTitle = function (slide) {
+			var title = slide.attr('data-title');
+			
+			titleTag.text(title);
+		}
+		
+		// Hide every slide but the first & update the title tag
+		updateTitle(slides.hide().filter('.current').show());
 	
 		var slider = function () {
 			var current = slides.filter('.current');
@@ -101,6 +109,7 @@ jQuery( function ($) {
 			
 			// Fadein next slide
 			next.fadeIn(fadeTime).addClass('current');
+			updateTitle(next);
 			
 			// Update the navigation with correct slide
 			slideButtons.removeClass('current');
@@ -135,8 +144,12 @@ jQuery( function ($) {
 			
 			// Fadein clicked slide
 			$(this.hash).fadeIn(fadeTime);
+			updateTitle($(this.hash));
 		});
 	})();
+	
+	$('table').tablesorter();
+	
 	 
 	/*
 	 * Print program button */
@@ -185,4 +198,10 @@ jQuery( function ($) {
 			})
 		}
 	})();
+	
+	/*
+	 * Fix for the random disappearing artist section in IE7 */
+	if ($.browser.msie && parseInt($.browser.version) < 8 && $('body.frontpage').length > 0) {
+		$('#artists').css('height', $('#mainframe').height());
+	}
 });

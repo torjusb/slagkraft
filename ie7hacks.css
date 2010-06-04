@@ -1,3 +1,18 @@
+#contact-form .who {
+	padding-top: 0;
+}
+	#contact-form .cool-sub {
+		float: right;
+		margin: 10px;
+		margin-right: 140px;
+	}
+		#contact-form .cool-sub input {
+			float: none;
+			margin: 0;
+		}
+
+.popdown .cool-sub { padding-right: 0; }
+
 #foot-nav div {
 	padding-left: 10px;
 }
@@ -69,11 +84,14 @@
 .frontpage #artists ul, .frontpage #artists {
 	zoom: 1;
 	height: 100%;
+	background: #000;
 }
 	.frontpage #artists li {
 		z-index: 3;
 		zoom: 1;
-		margin-top: -3px;
+		border-bottom: 1px solid #000;
+		position: relative;
+		margin-top: 0px;
 	}
 	.frontpage #artists li:hover img {
 		display: none;
@@ -81,6 +99,10 @@
 		.frontpage #artists li a {
 			position: relative;
 			z-index: 1;
+			display: block;
+			width: 179px;
+			height: 179px;
+			margin-bottom: 1px;
 			cursor: pointer;
 		}
 		.frontpage #artists .title {
@@ -134,7 +156,7 @@
 	margin-left: 9999px;
 }
 
-#featured .slide-nav {
+#featured .slide-nav, #map h1 {
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#7F000000',EndColorStr='#7F000000');
 }
 

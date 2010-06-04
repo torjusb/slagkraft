@@ -9,25 +9,23 @@
 				</ul>
 			</nav>
 			<ul class="slides">
-				<li id="slide-1" class="current">
+				<li id="slide-1" class="current" data-title="Vi lader opp til festivalen">
 					<a href="?page=article">
-						<img src="img/slide-1.png" />
-						<p>Vi lader opp til festivalen</p>
+						<img src="img/slide-1.png" alt="asdf" />
 					</a>
 				</li>
-				<li id="slide-2">	
-					<a href="#">
+				<li id="slide-2" data-title="asdf">	
+					<a href="?page=article">
 						<img src="img/slide-2.png" />
-						<p>asdf</p>
 					</a>
 				</li>
-				<li id="slide-3">
-					<a href="#">
-						<img src="img/slide-3.png" />
-						<p>Jobb som frivillig yo!</p>
+				<li id="slide-3" data-title="Jobb som frivillig yo!">
+					<a href="?page=article">
+						<img src="img/slide-3.png" alt="asdf" />
 					</a>
 				</li>
 			</ul>
+			<p class="title"></p>
 		</section>
 		<div id="news-subs">
 			<section id="latest-news">
